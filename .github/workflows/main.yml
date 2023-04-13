@@ -1,0 +1,40 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest
+    - name: Run tests
+      run: pytest
+
+    - name: Deploy to DigitalOcean
+      if: success()
+      env:
+        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        HOST: 164.90.225.30
+        USER: root
+      run: |
+        echo "$PRIVATE_KEY" > private_key
+        chmod 600 private_key
+        scp -i private_key -r . $USER@$HOST:/var/www/flask-app-server
+        ssh -i private_key $USER@$HOST "cd /var/www/flask-app-server && systemctl restart flask-app-server"
+        rm -f private_key
