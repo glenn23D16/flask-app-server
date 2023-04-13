@@ -28,14 +28,9 @@ jobs:
 
     - name: Add remote host key
       run: |
-        echo # 164.90.225.30:22 SSH-2.0-OpenSSH_9.0p1 Ubuntu-1ubuntu7.1
-        164.90.225.30 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDoEwie6ppkFfkvIvf19vY7f2749K11CkZ5ihGBt3IThdQiYshIm6sLit2ofCcU27Y7e4FvNloW2eVm6ztmpelHN95cjP3OZGrnkjVfBgDFWcRhfGXo+GrnWIWUYNmZJEOQ8mefkflROXjL6yk8rtcKklON7I7o5g/paGSL7Ukk2cnL94zwaW1pdXSj11zODsDtSi49FDWPdhomoBArRLEihLCHqPR2Nt5t57xr1FrtYEYU85tMVntVQ3uSygVnDm5jOhMKNVS/N7evLJDvqzTm3i4aRCQcI+8N56kcxPjmPtJQpsf1uyqsONh+d92r1Q3oN70AdoPRQdHwOi9/joOsVJS39ghAdtNbjGM0joc6E4dfw/FTFtPvxjmo61YEOb5dF7GcH/8mzguQfuQSxadut0cYsciB7MGTTF0UCLRVhf5D8Ct2zANSLohcLWJgeGjltAq+UPyJ+ejP10zmODZWvQCkmRyepVZevLwp7b4ZOPIA9hjLq4Bttj9uRNtNZGM=
-        # 164.90.225.30:22 SSH-2.0-OpenSSH_9.0p1 Ubuntu-1ubuntu7.1
-        164.90.225.30 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGzj0b6Hirq5DZiMCRkkejRPGqV5320Dd+DwOYwZVxcgeY4397VtvE/c/4W5TdZw4MPhXDxp27KnCKCNjUQh9MU=
-        # 164.90.225.30:22 SSH-2.0-OpenSSH_9.0p1 Ubuntu-1ubuntu7.1
-        164.90.225.30 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPRIZFpn3y0dQDhu2JlFqiyRrv8FRVQqEdyEKGQ3dcB+
-        # 164.90.225.30:22 SSH-2.0-OpenSSH_9.0p1 Ubuntu-1ubuntu7.1
-        # 164.90.225.30:22 SSH-2.0-OpenSSH_9.0p1 Ubuntu-1ubuntu7.1 ~/.ssh/known_hosts
+        echo '164.90.225.30 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDoEwie6ppkFfkvIvf19vY7f2749K11CkZ5ihGBt3IThdQiYshIm6sLit2ofCcU27Y7e4FvNloW2eVm6ztmpelHN95cjP3OZGrnkjVfBgDFWcRhfGXo+GrnWIWUYNmZJEOQ8mefkflROXjL6yk8rtcKklON7I7o5g/paGSL7Ukk2cnL94zwaW1pdXSj11zODsDtSi49FDWPdhomoBArRLEihLCHqPR2Nt5t57xr1FrtYEYU85tMVntVQ3uSygVnDm5jOhMKNVS/N7evLJDvqzTm3i4aRCQcI+8N56kcxPjmPtJQpsf1uyqsONh+d92r1Q3oN70AdoPRQdHwOi9/joOsVJS39ghAdtNbjGM0joc6E4dfw/FTFtPvxjmo61YEOb5dF7GcH/8mzguQfuQSxadut0cYsciB7MGTTF0UCLRVhf5D8Ct2zANSLohcLWJgeGjltAq+UPyJ+ejP10zmODZWvQCkmRyepVZevLwp7b4ZOPIA9hjLq4Bttj9uRNtNZGM=' >> ~/.ssh/known_hosts
+        echo '164.90.225.30 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGzj0b6Hirq5DZiMCRkkejRPGqV5320Dd+DwOYwZVxcgeY4397VtvE/c/4W5TdZw4MPhXDxp27KnCKCNjUQh9MU=' >> ~/.ssh/known_hosts
+        echo '164.90.225.30 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPRIZFpn3y0dQDhu2JlFqiyRrv8FRVQqEdyEKGQ3dcB+' >> ~/.ssh/known_hosts
 
     - name: Deploy to DigitalOcean
       if: success()
