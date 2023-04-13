@@ -24,7 +24,7 @@ jobs:
         pip install -r requirements.txt
         pip install pytest
     - name: Run tests
-      run: pytest -k test_app.py
+      run: pytest
 
     - name: Deploy to DigitalOcean
       if: success()
