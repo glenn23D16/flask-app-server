@@ -13,7 +13,7 @@ This project contains a simple Flask web application that runs on a DigitalOcean
 1. Clone the repository:
 
 ```
-git clone https://github.com/yourusername/flask-app-server.git
+git clone https://github.com/glenn23D16/flask-app-server.git
 cd flask-app-server
 ```
 
