@@ -74,4 +74,4 @@ The application is automatically deployed to the DigitalOcean server using GitHu
 
 **Optional Notes**
 
-During the process of solving this assignment, I learned the importance of carefully setting up and managing the CI/CD pipeline. Additionally, I gained valuable experience in configuring a Flask app server to run in a production environment using a cloud service provider like Digital Ocean.
+During the process of solving this assignment, I learned the importance of carefully setting up and managing the CI/CD pipeline. Additionally, I gained valuable experience in configuring a Flask app server to run in a development environment using a cloud service provider like Digital Ocean.
