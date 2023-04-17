@@ -29,6 +29,10 @@ jobs:
     - name: Create .ssh directory
       run: |
         mkdir -p ~/.ssh
+
+    - name: Add remote host key
+      run: |
+        ssh-keyscan -H 164.90.225.30 >> ~/.ssh/known_hosts
     
     - name: Deploy to DigitalOcean
       if: success()
@@ -43,4 +47,3 @@ jobs:
         ssh -i private_key $USER@$HOST "cd /var/www/flask-app-server && systemctl restart flask-app-server"
         rm -f private_key
 
-        
