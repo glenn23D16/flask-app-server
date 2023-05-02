@@ -26,14 +26,6 @@ jobs:
     - name: Run tests
       run: pytest
 
-    - name: Create .ssh directory
-      run: |
-        mkdir -p ~/.ssh
-
-    - name: Add remote host key
-      run: |
-        ssh-keyscan -H 164.90.225.30 >> ~/.ssh/known_hosts
-    
     - name: Deploy to DigitalOcean
       if: success()
       env:
