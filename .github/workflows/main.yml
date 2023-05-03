@@ -39,7 +39,7 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i private_key $USER@$HOST "cd /var/www/flask-app-server && systemctl restart flask-app-server > restart.log 2>&1"
         rm -f private_key
 
-      - name: Print restart log
-        run: cat restart.log
+    - name: Print restart log
+      run: cat restart.log
 
 
