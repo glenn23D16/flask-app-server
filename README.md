@@ -72,6 +72,10 @@ The application is automatically deployed to the DigitalOcean server using GitHu
 
 *File paths and environment variables*: There were issues with file paths and environment variables in the systemd service file, causing the Flask app server to fail to start. To fix this, the working directory and environment variables were correctly set in the service file, ensuring the Flask app server started successfully.
 
+*Adressing feedback*: Based on the feedback received, the following changes were made to the project:
+1. Removal of unnecessary host key and keyscan steps in the GitHub Actions workflow.
+2. Addition of feedback on restarting the Flask-app-server using a restart.log file. This allows for better understanding of the server's restart process and helps in troubleshooting any issues.
+
 **Optional Notes**
 
 During the process of solving this assignment, I learned the importance of carefully setting up and managing the CI/CD pipeline. Additionally, I gained valuable experience in configuring a Flask app server to run in a development environment using a cloud service provider like Digital Ocean.
