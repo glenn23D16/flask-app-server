@@ -35,7 +35,7 @@ jobs:
       run: |
         echo "$PRIVATE_KEY" > private_key
         chmod 600 private_key
-        scp -o StrictHostKeyChecking=no -i private_key $USER@$HOST:/var/www/flask-app-server/restart.log restart.log
+        scp -o StrictHostKeyChecking=no -i private_key restart.log $USER@$HOST:/var/www/flask-app-server/restart.log
         ssh -o StrictHostKeyChecking=no -i private_key $USER@$HOST "cd /var/www/flask-app-server && systemctl restart flask-app-server > restart.log 2>&1"
         rm -f private_key
 
