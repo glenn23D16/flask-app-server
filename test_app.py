@@ -26,5 +26,5 @@ def test_main_page(client):
     response = client.get('/')  # Send a GET request to the root endpoint
     assert response.status_code == 200  # Assert the response status code is
     # 200 (OK)
-    assert b'Hello, World!' in response.data  # Assert "Hello, World!" is
+    assert b'Hello, World! My name is Glenn.' in response.data  # Assert "Hello, World! My name is Glenn." is
     # present in the response data
